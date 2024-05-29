@@ -1,0 +1,17 @@
+<!--三項演算子　"条件式 ? 真の場合の値 : 偽の場合の値"-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of Thymeleaf</title>
+    <link rel="stylesheet" th:href="@{/css/obj.css}">
+</head>
+<body>
+    <h1>Thymeleaf Page</h1>
+    <p th:text="'val1 = ' + ${val1}"></p>
+    <!--${val1} eq ${val2} 真偽 eqは値が同じか比較-->　
+    <!--「+」はテキストを連結する演算-->
+    <p th:text="'val2 = ' + ${val2}"></p>
+    <p th:text="${val1} eq ${val2} ? '一致' : '不一致'"></p>
+</body>
+</html>

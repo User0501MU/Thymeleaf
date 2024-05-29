@@ -1,0 +1,29 @@
+<!--繰り返しの処理　/ th:each="現在値を格納する変数 : 繰り返し対象の配列値"-->
+<!--th:each属性は、属性値として配列やコレクションなどを扱います。属性値の中に入っている値を順番に取り出して、対象のHTML要素を繰り返し出力-->
+<!--※th:each属性の属性値はdataが「現在値を格納する変数」で、${obj}が「繰り返し対象の配列値」-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of Thymeleaf</title>
+    <link rel="stylesheet" th:href="@{/css/each.css}">
+</head>
+<body>
+    <h1>Thymeleaf Page</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>性別</th>
+            <th>年齢</th>
+        </tr>
+        <tr th:each="data : ${obj}">
+        <!--※${obj}に格納されている配列値は、中の値を順番に取り出して変数dataに代入される-->
+            <td th:text="${data.id}"></td>
+            <td th:text="${data.name}"></td>
+            <td th:text="${data.gender}"></td>
+            <td th:text="${data.age}"></td>
+        </tr>
+    </table>
+</body>
+</html>

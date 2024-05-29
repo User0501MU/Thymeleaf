@@ -1,0 +1,21 @@
+<!--条件分岐（th:if / th:unless）-->
+<!--th:if 属性は、属性値が真の場合のみ対象となるHTML要素を出力-->
+<!--th:unless 属性は、属性値が偽の場合のみ対象となるHTML要素を出力-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of Thymeleaf</title>
+    <link rel="stylesheet" th:href="@{/css/obj.css}">
+</head>
+<body>
+    <h1>Thymeleaf Page</h1>
+    <p th:if="${val1} ge ${val2}" th:text="'val1(' + ${val1} + ') は val2(' + ${val2} + ') 以上です。(th:if)'">th:if</p>
+    <!--<!--${val1} eq ${val2} 真偽 eqは値が同じか比較-->
+    <p th:unless="${val1} eq ${val2}" th:text="'val1(' + ${val1} + ') と val2(' + ${val2} + ') は 不一致です。(th:unless)'">th:unless</p>
+</body>
+</html>
+
+<!--「val1」は「val2」以上（th:if属性の条件式が真）で値が同じではない（th:unless属性の条件式が偽）ため、両方のHTML要素が出力されました。-->
+<!--★コード変数$｛val1｝格納する値はURLに記述して真偽を図る-->
